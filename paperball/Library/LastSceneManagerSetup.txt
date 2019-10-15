@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/teste_bolinha.unity
+- path: Assets/Scenes/cenario1.unity
   isLoaded: 1
   isActive: 1
