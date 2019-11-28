@@ -14,6 +14,7 @@ public class Ball : MonoBehaviour
     Vector3 initialPos;
     Transform pai;
     Score score;
+    AudioManagerScript audio;
     public TextMeshProUGUI powertxt;
 
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class Ball : MonoBehaviour
     {
         print("Ball Start");
         score = (Score) FindObjectOfType(typeof(Score));
+        audio = (AudioManagerScript) FindObjectOfType(typeof(AudioManagerScript));
 
         pai = transform.parent;
         initialPos = transform.localPosition;
@@ -73,8 +75,10 @@ public class Ball : MonoBehaviour
         print("Colisao "+collision.gameObject.name);
 
         if(collision.gameObject.name == "target"){
+            audio.playHitSound();
             print("Ponto");
             score.hit();
+            audio.playAplauseSound();
             // Destroy(gameObject);
         } else {
             print("Perdida");
