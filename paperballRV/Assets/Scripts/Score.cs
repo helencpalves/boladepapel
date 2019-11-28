@@ -26,7 +26,7 @@ public class Score : MonoBehaviour
         in_game = true;
         score = 0;
         initial_attempts = attempts;
-        stress = Random.Range(80, 80);
+        stress = Random.Range(50, 80);
         initial_stress = stress;
         trashcan.position = posicoes[Random.Range(0, posicoes.Length)];
     }
