@@ -59,7 +59,10 @@ public class Ball : MonoBehaviour
         } else {
             if (Input.GetButtonUp("Fire1"))
             {
-                score.restart();
+                if (score.win)
+                    score.nextlevel();
+                else
+                    score.restart();
                 Start();
             }
         }
